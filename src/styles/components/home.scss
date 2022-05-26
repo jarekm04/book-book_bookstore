@@ -2,8 +2,54 @@
   background-image: url("../../assets/5570863.jpg");
   background-size: cover;
   background-position: center;
-  height: 100vh;
-  .home__book {
-    .book__img {}
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(40rem, 40rem));
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    .home__book {
+      display: flex;
+      width: 40rem;
+      padding: 2rem;
+      background-color: rgba(255, 255, 255, 0.7);
+      position: relative;
+      .book__img {
+        width: 11rem;
+      }
+      .book__textBox {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        .book__title,
+        .book__pages,
+        .book__price {
+          font-size: 1.5rem;
+        }
+        .book__author {
+          font-size: 1.3rem;
+          margin-bottom: 1rem;
+        }
+        .book__price {
+          align-self: flex-end;
+        }
+        .book__add {
+          position: absolute;
+          bottom: 1rem;
+          right: 1rem;
+          font-size: 1.4rem;
+          padding: 0.8rem 1.2rem;
+          color: $color-ltBlack;
+          background-color: $color-ltGold;
+          border-radius: 2rem;
+          border: 1px solid transparent;
+          cursor: pointer;
+          transition: .2s ease;
+          &:hover {
+            border: 1px solid $color-ltBlack;
+          }
+        }
+      }
+    }
   }
 }
