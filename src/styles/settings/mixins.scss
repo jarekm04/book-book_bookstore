@@ -1,0 +1,19 @@
+@use 'sass:math';
+
+@mixin lg-screen {
+  @media screen and (max-width: #{$breakpoint-lg-screen}) {
+    @content;
+  }
+}
+
+@mixin md-screen {
+  @media screen and (max-width: #{$breakpoint-md-screen}) {
+    @content;
+  }
+}
+
+@mixin sm-screen {
+  @media screen and (max-width: #{$breakpoint-sm-screen}) {
+    @content;
+  }
+}

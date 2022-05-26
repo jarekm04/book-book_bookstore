@@ -1,0 +1,22 @@
+@import "variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: $font-primary;
+  color: $color-dkGray;
+  background-color: $color-white;
+}
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+}
