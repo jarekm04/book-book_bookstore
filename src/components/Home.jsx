@@ -1,6 +1,34 @@
+import {useState, useEffect} from "react";
 import boook from "../assets/458.jpg";
 
 const Home = () => {
+    const [books, setBooks] = useState();
+
+    // useEffect(() => {
+    //     fetch('http://localhost:3001/api/books?page=1')
+    //         .then(response => response.json())
+    //         .then(data => {
+    //             console.log(data);
+    //             setBooks(data.data);
+    //         });
+    //     fetch('http://localhost:3001/api/books?page=2')
+    //         .then(response => response.json())
+    //         .then(data => {
+    //             console.log(data);
+    //         })
+    // }, []);
+
+    async function requestBooks() {
+        const result = await fetch(
+            `http://localhost:3001/api/books?page=1`
+        );
+
+        const json = await result.json();
+        
+        setBooks(json.data);
+    }
+
+    console.log(books)
     return (
         <section className="home">
             <div className="container">
