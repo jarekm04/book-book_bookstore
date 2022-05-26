@@ -1,7 +1,9 @@
 const Home = () => {
     return (
         <section className="home">
-            <h2>home</h2>
+            <article className="home__book">
+                <img src="" alt=""/>
+            </article>
         </section>
     );
 };
