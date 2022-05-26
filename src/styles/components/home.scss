@@ -1,8 +1,9 @@
 .home {
+  background-image: url("../../assets/5570863.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
   .home__book {
-
+    .book__img {}
   }
 }
-
-//wyświetlenie wcześniej pobranych danych w konkretnym formacie, tj. każdą książkę powinien przedstawiać jeden blok, który ma w sobie zawierać okładkę książki, jej tytuł, autora, liczbę stron oraz przycisk:
-//DODAJ DO KOSZYKA, który będzie dodawał konkretną pozycję do koszyka.
