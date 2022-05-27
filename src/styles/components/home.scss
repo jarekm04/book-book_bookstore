@@ -1,4 +1,5 @@
 .home {
+  min-height: 100vh;
   background-image: url("../../assets/5570863.jpg");
   background-size: cover;
   background-position: center;
@@ -8,6 +9,7 @@
     gap: 1rem;
     justify-content: center;
     align-items: center;
+    position: relative;
     .home__book {
       display: flex;
       width: 40rem;
@@ -30,9 +32,6 @@
           font-size: 1.3rem;
           margin-bottom: 1rem;
         }
-        .book__price {
-          align-self: flex-end;
-        }
         .book__add {
           position: absolute;
           bottom: 1rem;
@@ -51,5 +50,27 @@
         }
       }
     }
+    .home__arrow {
+      position: absolute;
+      bottom: 3rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 4rem;
+      color: $color-gray;
+      cursor: pointer;
+      animation: bouncingArrow 2s infinite;
+    }
+  }
+}
+
+@keyframes bouncingArrow {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
   }
 }
