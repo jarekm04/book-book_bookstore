@@ -2,6 +2,7 @@ import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Header from "./Header";
 import Home from "./Home";
 import ShoppingCart from "./ShoppingCart";
+import OrderForm from "./OrderForm";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/koszyk" element={<ShoppingCart />} />
+            <Route path="/zamowienie" element={<OrderForm />} />
         </Routes>
     </Router>
   );
