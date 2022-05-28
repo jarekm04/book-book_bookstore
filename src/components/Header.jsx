@@ -17,7 +17,7 @@ const Header = () => {
                     <p className="purchase__price">
                         150zł
                     </p>
-                    <Link to="/shoppingCart">
+                    <Link to="/koszyk">
                         <AiOutlineShoppingCart className="purchase__icon"/>
                     </Link>
                 </div>

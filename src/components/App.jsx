@@ -1,6 +1,7 @@
-import Header from "./components/Header";
-import Home from "./components/Home";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import Header from "./Header";
+import Home from "./Home";
+import ShoppingCart from "./ShoppingCart";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
         <Header />
         <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/koszyk" element={<ShoppingCart />} />
         </Routes>
     </Router>
   );

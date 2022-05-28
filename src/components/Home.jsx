@@ -9,7 +9,7 @@ const Home = () => {
     const [arrow, setArrow] = useState(true);
 
     const checkIfBottom = () => {
-        if (page !== limit) {
+        if (page <= limit) {
             if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 20) {
                 setPage(prevState => prevState + 1);
             }
@@ -39,7 +39,7 @@ const Home = () => {
         <section className="home">
             <div className="container">
                 {books && <Book books={books}/>}
-                {arrow && page !== limit ?
+                {arrow && page <= limit ?
                     <BsFillArrowDownCircleFill
                         className="home__arrow"
                         onClick={() => setPage(prevState => prevState + 1)}
