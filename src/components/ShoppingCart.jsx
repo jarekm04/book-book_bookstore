@@ -14,6 +14,18 @@ const ShoppingCart = () => {
                             <p className="item__price">50 zł</p>
                             <RiDeleteBin7Fill className="item__remove"/>
                         </li>
+                        <li className="products__item">
+                            <img src="https://picsum.photos/200" alt="foto" className="item__img"/>
+                            <h3 className="item__title">Matematyka 1. Podręcznik. Zakres podstawowy</h3>
+                            <p className="item__price">50 zł</p>
+                            <RiDeleteBin7Fill className="item__remove"/>
+                        </li>
+                        <li className="products__item">
+                            <img src="https://picsum.photos/200" alt="foto" className="item__img"/>
+                            <h3 className="item__title">Matematyka 1. Podręcznik. Zakres podstawowy</h3>
+                            <p className="item__price">50 zł</p>
+                            <RiDeleteBin7Fill className="item__remove"/>
+                        </li>
                     </ul>
                 </section>
                 <section className="shoppingCart__summary">

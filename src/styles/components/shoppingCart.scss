@@ -9,18 +9,20 @@
     flex-wrap: wrap;
     padding: 4rem 1rem 0 1rem;
     .shoppingCart__products {
-      min-width: 50%;
+      flex-grow: .5;
       .shoppingCart__title {
         font-size: 2.3rem;
         margin-bottom: 2rem;
       }
       .products__list {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
         margin: 0 1rem 2rem 1rem;
         .products__item {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          gap: 1rem;
           width: 100%;
           padding: 1rem 2rem;
           background-color: $color-ltGray;
@@ -29,8 +31,8 @@
             height: 6rem;
           }
           .item__title {
-            font-size: 1.6rem;
-            max-width: 55%;
+            font-size: 1.5rem;
+            max-width: 50%;
           }
           .item__price {
             font-size: 1.7rem;
@@ -49,6 +51,7 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
+      height: 18rem;
       padding: 1.5rem 2rem;
       background-color: $color-ltGray;
       .summary__title {
