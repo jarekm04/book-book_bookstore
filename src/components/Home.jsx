@@ -1,8 +1,8 @@
-import {useState, useEffect, useRef} from "react";
+import {useState, useEffect} from "react";
 import Book from "./Book";
 import {BsFillArrowDownCircleFill} from "react-icons/bs";
 
-const Home = () => {
+const Home = ({ products }) => {
     const [books, setBooks] = useState([]);
     const [page, setPage] = useState(1);
     const [limit, setLimit] = useState(2);
@@ -39,12 +39,12 @@ const Home = () => {
         <section className="home">
             <div className="container">
                 {books && <Book books={books}/>}
-                {arrow && page <= limit ?
-                    <BsFillArrowDownCircleFill
-                        className="home__arrow"
-                        onClick={() => setPage(prevState => prevState + 1)}
-                    />
-                    : null}
+                {/*{arrow && page <= limit ?*/}
+                {/*    <BsFillArrowDownCircleFill*/}
+                {/*        className="home__arrow"*/}
+                {/*        onClick={() => setPage(prevState => prevState + 1)}*/}
+                {/*    />*/}
+                {/*    : null}*/}
             </div>
         </section>
     );

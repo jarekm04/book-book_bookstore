@@ -1,3 +1,4 @@
+import {useSelector} from "react-redux";
 import {Link} from "react-router-dom";
 import {AiOutlineShoppingCart} from "react-icons/ai";
 
@@ -14,8 +15,8 @@ const Header = () => {
                     </p>
                 </Link>
                 <div className="header__purchase">
-                    <p className="purchase__price">
-                        150zł
+                    <p className="purchase__quantity">
+                        10
                     </p>
                     <Link to="/koszyk">
                         <AiOutlineShoppingCart className="purchase__icon"/>
