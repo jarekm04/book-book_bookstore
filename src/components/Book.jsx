@@ -1,12 +1,17 @@
-const Book = ({ id, cover_url, title, author, pages, price }) => {
+import {useDispatch} from "react-redux";
+import {addToCart} from "../redux/actions/cartAction";
 
-    const handleCart = (e, book) => {
-        const elementID = e.target.parentElement.parentElement.id;
-        if (elementID === book.id.toString() && e.target.textContent === "Dodaj do koszyka") {
-            e.target.textContent = "Usuń z koszyka";
-        } else {
-            e.target.textContent = "Dodaj do koszyka";
-        }
+const Book = ({ id, cover_url, title, author, pages, price }) => {
+    const dispatch = useDispatch();
+
+    const handleCart = () => {
+        dispatch(addToCart(id));
+        // const elementID = e.target.parentElement.parentElement.id;
+        // if (elementID === book.id.toString() && e.target.textContent === "Dodaj do koszyka") {
+        //     e.target.textContent = "Usuń z koszyka";
+        // } else {
+        //     e.target.textContent = "Dodaj do koszyka";
+        // }
     }
 
     return (
@@ -17,7 +22,7 @@ const Book = ({ id, cover_url, title, author, pages, price }) => {
                 <p className="book__author">{author}</p>
                 <p className="book__pages">{pages} stron</p>
                 <p className="book__price">Cena: {price}zł</p>
-                <button className="book__add" onClick={() => console.log(id)}>Dodaj do koszyka</button>
+                <button className="book__add" onClick={handleCart}>Dodaj do koszyka</button>
             </div>
         </article>
     );

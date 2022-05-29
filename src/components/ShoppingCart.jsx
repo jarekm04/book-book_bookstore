@@ -1,31 +1,28 @@
-import {RiDeleteBin7Fill} from "react-icons/ri";
+import {useDispatch, useSelector} from "react-redux";
 import {Link} from "react-router-dom";
+import CartItem from "./CartItem";
 
 const ShoppingCart = () => {
+    const dispatch = useDispatch();
+
+    const cart = useSelector(state => state.cart);
+    const { cartItems } = cart;
+
     return (
         <section className="shoppingCart">
             <div className="container">
                 <section className="shoppingCart__products">
                     <h2 className="shoppingCart__title">Koszyk</h2>
                     <ul className="products__list">
-                        <li className="products__item">
-                            <img src="https://picsum.photos/200" alt="foto" className="item__img"/>
-                            <h3 className="item__title">Matematyka 1. Podręcznik. Zakres podstawowy</h3>
-                            <p className="item__price">50 zł</p>
-                            <RiDeleteBin7Fill className="item__remove"/>
-                        </li>
-                        <li className="products__item">
-                            <img src="https://picsum.photos/200" alt="foto" className="item__img"/>
-                            <h3 className="item__title">Matematyka 1. Podręcznik. Zakres podstawowy</h3>
-                            <p className="item__price">50 zł</p>
-                            <RiDeleteBin7Fill className="item__remove"/>
-                        </li>
-                        <li className="products__item">
-                            <img src="https://picsum.photos/200" alt="foto" className="item__img"/>
-                            <h3 className="item__title">Matematyka 1. Podręcznik. Zakres podstawowy</h3>
-                            <p className="item__price">50 zł</p>
-                            <RiDeleteBin7Fill className="item__remove"/>
-                        </li>
+                        {cartItems.length === 0 ? (
+                            <div>
+                                Twój koszyk jest pusty. <Link to ="/">Wróć</Link>
+                            </div>
+                        ) : (
+                            cartItems.map(item => (
+                                <CartItem id={item.id} item={item} />
+                            ))
+                        )}
                     </ul>
                 </section>
                 <section className="shoppingCart__summary">
