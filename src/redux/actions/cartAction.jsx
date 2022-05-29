@@ -2,7 +2,8 @@ import * as actionTypes from "../constans/cartConstants";
 import axios from "axios";
 
 export const addToCart = (id) => async (dispatch, getState) => {
-    const { data } = await axios.get(`http://localhost:3001/api/books/${id}`);
+    const response = await axios.get(`http://localhost:3001/api/books/${id}`)
+    const data = response.data.data;
 
     dispatch({
         type: actionTypes.ADD_TO_CART,

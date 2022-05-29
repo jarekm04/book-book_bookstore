@@ -1,36 +1,25 @@
-import {useState} from "react";
-import {useDispatch} from "react-redux";
-// import {addItem, deleteItem} from "../redux/actions/actions";
-
-const Book = ({books}) => {
-    // const dispatch = useDispatch();
+const Book = ({ id, cover_url, title, author, pages, price }) => {
 
     const handleCart = (e, book) => {
         const elementID = e.target.parentElement.parentElement.id;
         if (elementID === book.id.toString() && e.target.textContent === "Dodaj do koszyka") {
-            // dispatch(addItem(book))
             e.target.textContent = "Usuń z koszyka";
         } else {
-            // dispatch(deleteItem(book))
             e.target.textContent = "Dodaj do koszyka";
         }
     }
 
     return (
-        <>
-            {books.map((book) => (
-            <article className="home__book" key={book.id} id={book.id}>
-                <img src={book.cover_url} className="book__img" alt="bookPhoto"/>
-                <div className="book__textBox">
-                    <h3 className="book__title">{book.title}</h3>
-                    <p className="book__author">{book.author}</p>
-                    <p className="book__pages">{book.pages} stron</p>
-                    <p className="book__price">Cena: {book.price}zł</p>
-                    <button onClick={(e) => handleCart(e, book)} className="book__add">Dodaj do koszyka</button>
-                </div>
-            </article>
-            ))}
-        </>
+        <article className="home__book" key={id} id={id}>
+            <img src={cover_url} className="book__img" alt="bookPhoto"/>
+            <div className="book__textBox">
+                <h3 className="book__title">{title}</h3>
+                <p className="book__author">{author}</p>
+                <p className="book__pages">{pages} stron</p>
+                <p className="book__price">Cena: {price}zł</p>
+                <button className="book__add" onClick={() => console.log(id)}>Dodaj do koszyka</button>
+            </div>
+        </article>
     );
 };
 
