@@ -1,8 +1,15 @@
-import {useSelector} from "react-redux";
 import {Link} from "react-router-dom";
+import {useSelector} from "react-redux";
 import {AiOutlineShoppingCart} from "react-icons/ai";
 
 const Header = () => {
+    const cart = useSelector(state => state.cart);
+    const { cartItems } = cart;
+
+    const getCartCount = () => {
+        return cartItems.length;
+    }
+
     return (
         <header className="header">
             <div className="container">
@@ -16,7 +23,7 @@ const Header = () => {
                 </Link>
                 <div className="header__purchase">
                     <p className="purchase__quantity">
-                        10
+                        Sztuk: {getCartCount()}
                     </p>
                     <Link to="/koszyk">
                         <AiOutlineShoppingCart className="purchase__icon"/>

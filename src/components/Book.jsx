@@ -1,17 +1,17 @@
-import {useDispatch} from "react-redux";
-import {addToCart} from "../redux/actions/cartAction";
+import {useDispatch, useSelector} from "react-redux";
+import {addToCart} from "../redux/actions/cartActions";
+import {useEffect, useState} from "react";
 
-const Book = ({ id, cover_url, title, author, pages, price }) => {
+const Book = ({id, cover_url, title, author, pages, price}) => {
     const dispatch = useDispatch();
+    const cart = useSelector(state => state.cart);
+    const { cartItems } = cart;
 
-    const handleCart = () => {
-        dispatch(addToCart(id));
-        // const elementID = e.target.parentElement.parentElement.id;
-        // if (elementID === book.id.toString() && e.target.textContent === "Dodaj do koszyka") {
-        //     e.target.textContent = "Usuń z koszyka";
-        // } else {
-        //     e.target.textContent = "Dodaj do koszyka";
-        // }
+
+    const handleAddToCart = (e) => {
+        const elID = e.target.parentElement.parentElement.id;
+
+        dispatch(addToCart(id))
     }
 
     return (
@@ -22,7 +22,7 @@ const Book = ({ id, cover_url, title, author, pages, price }) => {
                 <p className="book__author">{author}</p>
                 <p className="book__pages">{pages} stron</p>
                 <p className="book__price">Cena: {price}zł</p>
-                <button className="book__add" onClick={handleCart}>Dodaj do koszyka</button>
+                    <button className={!"test" ? "book__add-added" : "book__add"} onClick={handleAddToCart}>Dodaj do koszyka</button>
             </div>
         </article>
     );

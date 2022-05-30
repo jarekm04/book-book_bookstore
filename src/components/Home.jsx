@@ -1,7 +1,7 @@
 import {useState, useEffect} from "react";
 import {useSelector, useDispatch} from "react-redux";
 import {getProducts as listProducts} from "../redux/actions/productActions";
-import {addToCart} from "../redux/actions/cartAction";
+import {addToCart} from "../redux/actions/cartActions";
 import Book from "./Book";
 import {BsFillArrowDownCircleFill} from "react-icons/bs";
 

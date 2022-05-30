@@ -47,6 +47,11 @@
           &:hover {
             border: 1px solid $color-ltBlack;
           }
+          &.added {
+            background-color: $color-medGray;
+            cursor: auto;
+            border: none;
+          }
         }
       }
     }

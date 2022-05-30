@@ -8,6 +8,10 @@ const ShoppingCart = () => {
     const cart = useSelector(state => state.cart);
     const { cartItems } = cart;
 
+    const getCartPrice = () => {
+        return cartItems.reduce((sum, item) => sum + item.price, 0);
+    }
+
     return (
         <section className="shoppingCart">
             <div className="container">
@@ -19,15 +23,15 @@ const ShoppingCart = () => {
                                 Twój koszyk jest pusty. <Link to ="/">Wróć</Link>
                             </div>
                         ) : (
-                            cartItems.map(item => (
-                                <CartItem id={item.id} item={item} />
+                            cartItems.map((item) => (
+                                <CartItem key={item.id} item={item} />
                             ))
                         )}
                     </ul>
                 </section>
                 <section className="shoppingCart__summary">
                     <p className="summary__title">Razem do zapłaty:</p>
-                    <p className="summary__price">2004zł</p>
+                    <p className="summary__price">{getCartPrice()}zł</p>
                     <hr/>
                     <Link to="/zamowienie" className="summary__btn">Kup teraz</Link>
                 </section>
