@@ -17,3 +17,18 @@
     @content;
   }
 }
+
+@mixin btn-style {
+  font-size: 1.6rem;
+  color: $color-white;
+  background-color: $color-ltBlack;
+  padding: 1rem 3rem;
+  text-decoration: none;
+  transition: .2s ease;
+  cursor: pointer;
+  border: none;
+
+  &:hover {
+    background-color: $color-gray;
+  }
+}
