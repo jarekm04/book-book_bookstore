@@ -1,0 +1,13 @@
+.orderForm {
+  min-height: calc(100vh - 8.1rem);
+  background-image: url("../../assets/5570863.jpg");
+  background-size: cover;
+  background-position: center;
+  .container {
+    padding: 3rem 1rem 0 1rem;
+    .orderForm__title {
+      font-size: 3rem;
+      text-align: center;
+    }
+  }
+}

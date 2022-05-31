@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {resetCart} from "../redux/actions/cartActions";
+import {resetCart} from "../../redux/actions/cartActions";
 import CartItem from "./CartItem";
 
 const ShoppingCart = () => {

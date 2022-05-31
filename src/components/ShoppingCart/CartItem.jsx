@@ -1,5 +1,5 @@
 import {useDispatch} from "react-redux";
-import {removeFromCart} from "../redux/actions/cartActions";
+import {removeFromCart} from "../../redux/actions/cartActions";
 import {RiDeleteBin7Fill} from "react-icons/ri";
 
 const CartItem = ({ item }) => {

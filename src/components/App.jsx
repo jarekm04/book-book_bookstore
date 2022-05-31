@@ -1,11 +1,11 @@
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import Header from "./Header";
+import Header from "./Nav/Header";
 import Home from "./Home/Home";
-import ShoppingCart from "./ShoppingCart";
-import OrderForm from "./OrderForm";
+import ShoppingCart from "./ShoppingCart/ShoppingCart";
+import OrderForm from "./Form/OrderForm";
 
 function App() {
-  return (
+    return (
     <Router>
         <Header />
         <Routes>

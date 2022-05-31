@@ -5,22 +5,11 @@ import {useEffect, useState} from "react";
 const Book = ({id, cover_url, title, author, pages, price}) => {
     const dispatch = useDispatch();
     const cart = useSelector(state => state.cart);
-    const { cartItems } = cart;
+    const {cartItems} = cart;
 
 
-    const handleAddToCart = (e) => {
-        const target = e.target;
+    const handleAddToCart = () => {
         dispatch(addToCart(id))
-        checkIfAdded(target)
-    }
-
-    const checkIfAdded = (target) => {
-        console.log(id);
-        console.log(target);
-        target.classList.add("added");
-        cartItems.map(item =>
-            item.id === target.parentElement.parentElement.id ? console.log("elo") : null
-        )
     }
 
     return (
