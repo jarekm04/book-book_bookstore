@@ -1,7 +1,7 @@
 import {useEffect} from "react";
 import {useSelector, useDispatch} from "react-redux";
 import {getProducts as listProducts} from "../../redux/actions/productActions";
-import Book from "./Book";
+import Book from "./elements/Book";
 
 const Home = () => {
     const dispatch = useDispatch();

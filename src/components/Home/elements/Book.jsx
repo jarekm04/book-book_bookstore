@@ -1,15 +1,13 @@
-import {useDispatch, useSelector} from "react-redux";
-import {addToCart} from "../../redux/actions/cartActions";
-import {useEffect, useState} from "react";
+import {useState} from "react";
+import {useDispatch} from "react-redux";
+import {addToCart} from "../../../redux/actions/cartActions";
 
 const Book = ({id, cover_url, title, author, pages, price}) => {
+    const [quantity, setQuantity] = useState(1);
     const dispatch = useDispatch();
-    const cart = useSelector(state => state.cart);
-    const {cartItems} = cart;
-
 
     const handleAddToCart = () => {
-        dispatch(addToCart(id))
+        dispatch(addToCart(id, quantity))
     }
 
     return (
@@ -20,6 +18,19 @@ const Book = ({id, cover_url, title, author, pages, price}) => {
                 <p className="book__author">{author}</p>
                 <p className="book__pages">{pages} stron</p>
                 <p className="book__price">Cena: {price}zł</p>
+                <div className="book__qty">
+                    <p>Sztuk:</p>
+                    <select
+                        value={quantity}
+                        onChange={e => setQuantity(parseInt(e.target.value))}
+                    >
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
                 <button
                     className="book__add"
                     onClick={handleAddToCart}
@@ -27,6 +38,7 @@ const Book = ({id, cover_url, title, author, pages, price}) => {
                     Dodaj do koszyka
                 </button>
             </div>
+
         </article>
     );
 };

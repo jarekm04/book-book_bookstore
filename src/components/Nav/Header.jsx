@@ -7,7 +7,7 @@ const Header = () => {
     const { cartItems } = cart;
 
     const getCartCount = () => {
-        return cartItems.length;
+        return cartItems.reduce((qty, item) => parseInt(item.quantity) + qty, 0);
     }
 
     return (
