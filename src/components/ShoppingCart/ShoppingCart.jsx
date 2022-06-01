@@ -7,7 +7,7 @@ const ShoppingCart = () => {
     const dispatch = useDispatch();
 
     const cart = useSelector(state => state.cart);
-    const { cartItems } = cart;
+    const {cartItems} = cart;
 
     const qtyChangeHandler = (id, quantity) => {
         dispatch(addToCart(id, quantity));
@@ -30,7 +30,9 @@ const ShoppingCart = () => {
             <div className="container">
                 <section className="shoppingCart__products">
                     <div className="shoppingCart__headline">
-                        <h2 className="shoppingCart__title">Koszyk</h2>
+                        <h2 className="shoppingCart__title">
+                            Koszyk
+                        </h2>
                         <button
                             className="shoppingCart__resetBtn"
                             onClick={() => handleResetCart()}
@@ -42,7 +44,7 @@ const ShoppingCart = () => {
                         {cartItems.length === 0 ? (
                             <div className="products__empty">
                                 Twój koszyk jest pusty.
-                                <Link to ="/">Wróć do strony głównej.</Link>
+                                <Link to="/">Wróć do strony głównej.</Link>
                             </div>
                         ) : (
                             cartItems.map((item) => (
@@ -57,10 +59,16 @@ const ShoppingCart = () => {
                     </ul>
                 </section>
                 <section className="shoppingCart__summary">
-                    <p className="summary__title">Razem do zapłaty:</p>
-                    <p className="summary__price">{getCartPrice()}zł</p>
+                    <p className="summary__title">
+                        Razem do zapłaty:
+                    </p>
+                    <p className="summary__price">
+                        {getCartPrice()}zł
+                    </p>
                     <hr/>
-                    <Link to="/zamowienie" className="summary__btn">Kup teraz</Link>
+                    <Link to="/zamowienie" className="summary__btn">
+                        Kup teraz
+                    </Link>
                 </section>
             </div>
         </section>

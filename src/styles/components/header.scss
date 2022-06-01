@@ -1,11 +1,13 @@
 .header {
   padding: 0 2rem;
   border-bottom: 0.1rem solid #eae9ed;
+
   .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 8rem;
+
     .header__logo {
       display: flex;
       flex-direction: column;
@@ -14,23 +16,28 @@
       color: $color-ltBlack;
       text-decoration: none;
       transition: .3s ease;
-      border: 1px solid transparent;
+      border: 0.1rem solid transparent;
       border-radius: 1rem;
+
       &:hover {
         border: 1px solid $color-ltBlack;
       }
+
       .logo__textTop {
         font-size: 3rem;
       }
+
       .logo__textBottom {
         font-size: 1.2rem;
         letter-spacing: 0.55rem;
       }
     }
+
     .header__purchase {
       display: flex;
       align-items: center;
       margin-right: 2rem;
+
       .purchase__quantity {
         font-size: 2rem;
         padding: 1rem 1.5rem;
@@ -38,11 +45,13 @@
         background-color: $color-ltGold;
         border-radius: 1.5rem;
       }
+
       .purchase__icon {
         font-size: 3.5rem;
         color: $color-ltBlack;
         text-decoration: none;
         transition: .3s ease;
+
         &:hover {
           transform: scale(1.2);
         }

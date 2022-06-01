@@ -2,12 +2,12 @@ import {useState} from "react";
 import {useDispatch} from "react-redux";
 import {addToCart} from "../../../redux/actions/cartActions";
 
-const Book = ({id, cover_url, title, author, pages, price}) => {
+const Book = ({ id, cover_url, title, author, pages, price }) => {
     const [quantity, setQuantity] = useState(1);
     const dispatch = useDispatch();
 
     const handleAddToCart = () => {
-        dispatch(addToCart(id, quantity))
+        dispatch(addToCart(id, quantity));
     }
 
     return (
@@ -38,7 +38,6 @@ const Book = ({id, cover_url, title, author, pages, price}) => {
                     Dodaj do koszyka
                 </button>
             </div>
-
         </article>
     );
 };

@@ -18,7 +18,10 @@ const CartItem = ({ item, qtyChangeHandler, removeCartItem }) => {
                 <option value="5">5</option>
             </select>
             <p className="item__price">{price * quantity}zł</p>
-            <RiDeleteBin7Fill className="item__remove" onClick={() => removeCartItem(id)}/>
+            <RiDeleteBin7Fill
+                className="item__remove"
+                onClick={() => removeCartItem(id)}
+            />
         </li>
     );
 };

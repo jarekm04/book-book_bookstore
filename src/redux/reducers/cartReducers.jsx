@@ -22,7 +22,7 @@ export const cartReducer = (state = CART_INITIAL_STATE, action) => {
                 return {
                     ...state,
                     cartItems: [...state.cartItems,item]
-                }
+                };
             }
         case actionTypes.REMOVE_FROM_CART:
             return {
@@ -34,10 +34,10 @@ export const cartReducer = (state = CART_INITIAL_STATE, action) => {
             return {
                 ...state,
                 cartItems: []
-            }
+            };
 
         default:
             return state;
     }
 
-}
+};

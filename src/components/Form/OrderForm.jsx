@@ -82,7 +82,7 @@ const OrderForm = () => {
         try {
             const response = await axios.post('http://localhost:3001/api/order', values);
             console.log(response.data);
-            alert("Formularz wysłany!")
+            alert("Formularz wysłany!");
             handleReset();
             navigate("/");
         } catch (error) {
