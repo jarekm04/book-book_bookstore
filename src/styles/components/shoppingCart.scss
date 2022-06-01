@@ -76,10 +76,9 @@
 
           .item__title {
             font-size: 1.5rem;
-            max-width: 50%;
+            width: 40%;
             @include sm-screen {
               width: 100%;
-              max-width: none;
               text-align: center;
             }
           }
@@ -90,6 +89,7 @@
 
           .item__price {
             font-size: 1.7rem;
+            width: 6rem;
           }
 
           .item__remove {

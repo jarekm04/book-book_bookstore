@@ -76,7 +76,8 @@ const Form = () => {
             let obj = {};
             obj.id = item.id;
             obj.quantity = item.quantity;
-            values.order.push(obj);
+
+            return values.order.push(obj);
         });
 
         try {
