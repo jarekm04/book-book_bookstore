@@ -12,13 +12,20 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    @include sm-screen {
+      grid-template-columns: repeat(auto-fill, minmax(33rem, 33rem));
+    }
 
     .home__book {
       display: flex;
-      width: 40rem;
       padding: 2rem;
       background-color: rgba(255, 255, 255, 0.7);
       position: relative;
+      @include sm-screen {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
+      }
 
       .book__img {
         width: 11rem;
@@ -28,6 +35,9 @@
         display: flex;
         flex-direction: column;
         padding: 1rem;
+        @include sm-screen {
+          width: 73%;
+        }
 
         .book__title,
         .book__pages,
@@ -62,6 +72,10 @@
           border: 0.1rem solid transparent;
           cursor: pointer;
           transition: .2s ease;
+          @include sm-screen {
+            bottom: 1rem;
+            right: 3rem;
+          }
 
           &:hover {
             border: 0.1rem solid $color-ltBlack;

@@ -12,8 +12,6 @@ const Header = () => {
         return cartItems.reduce((qty, item) => parseInt(item.quantity) + qty, 0);
     }
 
-    console.log(sidebar)
-
     return (
         <>
             <header className="header">
@@ -54,7 +52,10 @@ const Header = () => {
                                 Sztuk: {getCartCount()}
                             </p>
                             <Link to="/koszyk">
-                                <AiOutlineShoppingCart className="purchase__icon"/>
+                                <AiOutlineShoppingCart
+                                    className="purchase__icon"
+                                    onClick={() => setSidebar(!sidebar)}
+                                />
                             </Link>
                         </div>
                     </nav>

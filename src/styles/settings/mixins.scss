@@ -1,17 +1,5 @@
 @use 'sass:math';
 
-@mixin lg-screen {
-  @media screen and (max-width: #{$breakpoint-lg-screen}) {
-    @content;
-  }
-}
-
-@mixin md-screen {
-  @media screen and (max-width: #{$breakpoint-md-screen}) {
-    @content;
-  }
-}
-
 @mixin sm-screen {
   @media screen and (max-width: #{$breakpoint-sm-screen}) {
     @content;
@@ -27,6 +15,10 @@
   transition: .2s ease;
   cursor: pointer;
   border: none;
+  @include sm-screen {
+    font-size: 1.4rem;
+    padding: 1rem 2rem;
+  }
 
   &:hover {
     background-color: $color-gray;

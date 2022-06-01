@@ -58,15 +58,30 @@
           width: 100%;
           padding: 1rem 2rem;
           background-color: $color-ltGray;
+          @include sm-screen {
+            flex-wrap: wrap;
+            justify-content: center;
+            row-gap: 1.5rem;
+            column-gap: 2rem;
+          }
 
           .item__img {
             width: 5rem;
             height: 6rem;
+            @include sm-screen {
+              width: 8rem;
+              height: 11rem;
+            }
           }
 
           .item__title {
             font-size: 1.5rem;
             max-width: 50%;
+            @include sm-screen {
+              width: 100%;
+              max-width: none;
+              text-align: center;
+            }
           }
 
           select {

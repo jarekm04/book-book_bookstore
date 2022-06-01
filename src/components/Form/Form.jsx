@@ -46,7 +46,7 @@ const Form = () => {
             placeholder: "Miasto",
             errorMessage: "Miasto powinno zawierać litery (min. 3)",
             required: true,
-            pattern: "^[A-Za-z]{3,16}$"
+            minLength: 3
         },
         {
             id: 4,
