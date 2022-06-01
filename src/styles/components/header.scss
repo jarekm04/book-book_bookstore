@@ -1,6 +1,12 @@
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   padding: 0 2rem;
   border-bottom: 0.1rem solid #eae9ed;
+  background-color: $color-white;
+  z-index: 100;
 
   .container {
     display: flex;
@@ -25,18 +31,24 @@
 
       .logo__textTop {
         font-size: 3rem;
+        @include sm-screen {
+          font-size: 2.5rem;
+        }
       }
 
       .logo__textBottom {
-        font-size: 1.2rem;
-        letter-spacing: 0.55rem;
+        font-size: 1rem;
+        letter-spacing: 0.4rem;
       }
     }
 
-    .header__purchase {
+    .header__purchase.desktop {
       display: flex;
       align-items: center;
       margin-right: 2rem;
+      @include sm-screen {
+        display: none;
+      }
 
       .purchase__quantity {
         font-size: 2rem;
@@ -51,6 +63,65 @@
         color: $color-ltBlack;
         text-decoration: none;
         transition: .3s ease;
+
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+}
+
+
+.header__purchase.mobile {
+  display: none;
+
+  @include sm-screen {
+    display: block;
+
+    .mobile__openIcon {
+      font-size: 3rem;
+      cursor: pointer;
+      transition: .2s ease;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+
+
+    .mobile__menu {
+      position: fixed;
+      top: 8rem;
+      right: -12rem;
+      width: 12rem;
+      height: 12rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      transition: .3s ease;
+      background: $color-white;
+      border-bottom-width: 0.1rem;
+      border-bottom-style: solid;
+      border-bottom-color: gray;
+      border-left-width: 0.1rem;
+      border-left-style: solid;
+      border-left-color: gray;
+
+      &.active {
+        right: 0;
+      }
+
+      .purchase__quantity {
+        font-size: 1.6rem;
+      }
+
+      .purchase__icon {
+        font-size: 2.8rem;
+        color: $color-ltBlack;
+        transition: .2s ease;
 
         &:hover {
           transform: scale(1.2);

@@ -43,7 +43,7 @@ const ShoppingCart = () => {
                     <ul className="products__list">
                         {cartItems.length === 0 ? (
                             <div className="products__empty">
-                                Twój koszyk jest pusty.
+                                <p>Twój koszyk jest pusty.</p>
                                 <Link to="/">Wróć do strony głównej.</Link>
                             </div>
                         ) : (

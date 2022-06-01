@@ -1,11 +1,11 @@
 import {useState} from "react";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import axios from "axios";
 import FormInput from "./elements/FormInput";
 import {resetCart} from "../../redux/actions/cartActions";
 
-const OrderForm = () => {
+const Form = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const cart = useSelector(state => state.cart);
@@ -105,11 +105,17 @@ const OrderForm = () => {
                         />
                     ))}
                     {booksPrice < 1 ? (
-                        <p>Nie wybrano żadnej z książek</p>
+                        <>
+                            <p>Nie wybrano żadnej z książek</p>
+                            <Link to="/koszyk">Wróć do koszyka</Link>
+                        </>
                     ) : (
                         <>
                             <p>Cena całkowita: {booksPrice}</p>
-                            <button>Wyślij</button>
+                            <div className="form__buttons">
+                                <Link to="/koszyk">Wróć</Link>
+                                <button type="submit">Wyślij</button>
+                            </div>
                         </>
                     )}
                 </form>
@@ -118,4 +124,4 @@ const OrderForm = () => {
     );
 };
 
-export default OrderForm;
+export default Form;
